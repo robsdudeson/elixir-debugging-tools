@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>Your deck.js Presentation</title>
+  <title>Elixir Debugging Tools - Robby Thompson</title>
 
   <!-- Required stylesheet -->
   <link rel="stylesheet" media="screen" href="core/deck.core.css">
@@ -16,6 +16,7 @@
   <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
   <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
   <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" media="screen" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
   <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
@@ -28,11 +29,33 @@
 
   <!-- my styles -->
   <style>
+    .code {
+      background: black;
+      border-radius: .25em;
+      color: white;
+      padding: .25em;
+    }
     .tabbed {
       margin-left: 4em;
     }
-    .grouped {
-      margin: 0 0 auto;
+    .presenter p{
+      text-align: center;
+    }
+    .presenter a {
+      margin: 2em 2em auto;
+      color: rgb(68, 68, 68);
+    }
+    .presenter i {
+      margin: .5em .25em auto
+    }
+    .audience img {
+      width: auto;
+    }
+    .thank-you p {
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 
@@ -48,25 +71,29 @@
       <h1>Elixir and Erlang Debugging Tools</h1>
     </section>
     
-    <section class="slide">
+    <section class="slide presenter">
       <h2>Presenter</h2>
+      <p><img src='./image/robby_thompson.jpg' alt='Super Rad Pic of Robby Thompson' height="300em"></p>
       <p>Robby Thompson</p>
-      <p><img src='./image/robby_thompson.jpg' alt='Robby Thompson' height="300em"></p>
+      <br />
+      <p>
+        <a href="https://github.com/robsdudeson"><i class="fab fa-git-square"></i>github</a>
+        <a href="https://linkedin.com/in/robbythompson"><i class="fab fa-linkedin"></i>linked-in</a>
+        <a href="http://robsdudeson.com"><i class="fas fa-server"></i>robsdudeson.com</a>
+      </p>
+      <br />
+      <p>I've been coding elixir since 2018.  I've been a developer since 2012.</p>
+      <p>Outside of those, I'm a father, husband, brewer, and purveyor of many hobbies</p>
     </section>
     
-    <section class="slide">
+    <section class="slide audience">
       <h2>Intended Audience</h2>
       <p>This is targeted for anyone who is already familiar with elixir and erlang</p>
       <br/>
-      <p>If thats not you, learn more at...</p>
-      <br/>
       <p>
-        <a class="grouped" href="https://elixir-lang.org/">
-          <img class="grouped" alt="elixir" src="./image/elixir_logo.png">
-          <div>https://elixir-lang.org/</div>
-        </a>
+        <a href="https://elixir-lang.org/"><img alt="elixir" src="./image/elixir_logo.png"></a>
+        <a href="https://erlang.org/"><img alt="erlang" src="./image/erlang_logo.png"></a>
       </p>
-      <p><a href="https://erlang.org/"><img alt="erlang" src="./image/erlang_logo.png">https://erlang.org/</a></p>
     </section>
 
     <section class="slide">
@@ -74,11 +101,13 @@
       <p>basic console out</p>
       <br />
       <p>Example:</p>
-      <p><code>iex(1)> map = %{key0: :value0, key1: :value1}</code></p>
-      <p><code class="tabbed">%{key0: :value0, key1: :value1}</code></p>
-      <p><code>iex(2)> IO.inspect(map)</code></p>
-      <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← output to console</p>
-      <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← returns the thing inspected</p>
+      <div class="code">
+        <p><code>iex(1)> map = %{key0: :value0, key1: :value1}</code></p>
+        <p><code class="tabbed">%{key0: :value0, key1: :value1}</code></p>
+        <p><code>iex(2)> IO.inspect(map)</code></p>
+        <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← output to console</p>
+        <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← returns the thing inspected</p>
+      </div>
     </section>
 
     <section class="slide">
@@ -87,10 +116,12 @@
       <p>has access to the pre-compiled aliases and imports</p>
       <br />
       <p>Example:</p>
-      <p><code>def some_fun(a, b, c) do</code></p>
-      <p><code class="tabbed">require IEx; IEx.pry</code></p>
-      <p><code class="tabbed">...</code></p>
-      <p><code>end</code></p>
+      <div class="code">
+        <p><code>def some_fun(a, b, c) do</code></p>
+        <p><code class="tabbed">require IEx; IEx.pry</code></p>
+        <p><code class="tabbed">...</code></p>
+        <p><code>end</code></p>
+      </div>
     </section>
 
     <section class="slide">
@@ -99,7 +130,7 @@
       <p>does not have access to aliases and imports because its run on the compiled code</p>
       <br />
       <p>Example:</p>
-      <p><code>TODO:</code></p>
+      <p><div class="code"><code>TODO:</code></p></div></p>
     </section>
 
     <section class="slide">
@@ -107,7 +138,7 @@
       <p>basically <code>IEx.break!</code> but with a GUI</p>
       <br />
       <p>Example:</p>
-      <p><code>TODO:</code></p>
+      <p><div class="code"><code>TODO:</code></p></div></p>
     </section>
 
     <section class="slide">
@@ -115,7 +146,7 @@
       <p>basically the visual debugger but you can see more meta-data for the application and its processes</p>
       <br />
       <p>Example:</p>
-      <p><code>TODO:</code></p>
+      <p><div class="code"><code>TODO:</code></p></div></p>
     </section>
 
     <section class="slide">
@@ -123,15 +154,17 @@
       <p>because Elixir is Open Source, the community has created more tooling around debugging</p>
       <br />
       <p>Example:</p>
-      <p><code>TODO:</code></p>
+      <p><div class="code"><code>TODO:</code></p></div></p>
     </section>
 
     <section class="slide">
       <h1>Questions?</h1>
     </section>
     
-    <section class="slide">
+    <section class="slide thank-you">
       <h1>Thank You!</h1>
+      <br />
+      <p><a href="https://github.com/robsdudeson/elixir-debugging-tools">https://github.com/robsdudeson/elixir-debugging-tools</a></p>
     </section>
     
     <section class="slide">
