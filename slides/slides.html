@@ -28,16 +28,49 @@
   <link rel="stylesheet" media="print" href="core/print.css">
 
   <!-- my styles -->
+  <!-- color: rgb(151, 116, 214); -->
   <style>
+    h1 {
+      color: #4e2a8e;
+      font-family: 'Fira Code', monospace;
+    }
+    h2 {
+      color: #4e2a8e;
+      font-family: 'Fira Code', monospace;
+    }
+    h2 code {
+      color: #4e2a8e;
+    }
+    p {
+      color: #4e2a8e;
+      font-family: 'Fira Code', monospace;
+    }
+    li {
+      color: #4e2a8e;
+      font-family: 'Fira Code', monospace;
+    }
+    a {
+      color: #4e2a8e;
+    }
+    a:visited {
+      color: rgb(151, 116, 214);
+    }
+    a code{
+      color: #4e2a8e;
+    }
+    a:visited code{
+      color: rgb(151, 116, 214);
+    }
     .code {
-      background: black;
+      color: #4e2a8e;
+      font-family: 'Fira Code', monospace;
+      background: rgb(28, 28, 28);
       border-radius: .25em;
-      color: yellow;
       padding: .25em;
-      width: 40em;
+      width: 45em;
     }
     .code code{
-      color: #c6c6c6;
+      color: rgb(151, 116, 214);
     }
     .tabbed {
       margin-left: 2em;
@@ -45,12 +78,15 @@
     .tabbed-2 {
       margin-left: 4em;
     }
+    .hands-on-example {
+      font-weight: bold;
+    }
     .presenter{
       text-align: center;
     }
     .presenter a {
       margin: 2em 2em auto;
-      color: rgb(68, 68, 68);
+      color: #4e2a8e;
     }
     .presenter i {
       margin: .5em .25em auto
@@ -63,6 +99,12 @@
       margin-left: auto;
       margin-right: auto;
       width: 30em;
+    }
+    .debugger img {
+      display: inline-block;
+    }
+    .observer img {
+      display: inline-block;
     }
     .thank-you {
       text-align: center;
@@ -96,8 +138,8 @@
       <p>Robby Thompson</p>
       <br />
       <p>
-        <a href="https://github.com/robsdudeson"><i class="fab fa-git-square"></i>github</a>
-        <a href="https://linkedin.com/in/robbythompson"><i class="fab fa-linkedin"></i>linked-in</a>
+        <a href="https://github.com/robsdudeson"><i class="fab fa-git-square"></i>github/robsdudeson</a>
+        <a href="https://linkedin.com/in/robbythompson"><i class="fab fa-linkedin"></i>linked-in/RobbyThompson</a>
         <a href="http://robsdudeson.com"><i class="fas fa-server"></i>robsdudeson.com</a>
       </p>
       <br />
@@ -106,27 +148,31 @@
     </section>
     
     <section class="slide audience">
-      <h2>Intended Audience</h2>
+      <h2>How to use these slides</h2>
       <p>This is targeted for anyone who is already familiar with elixir</p>
+      <p>where applicable, documentation is linked in the slide title</p>
+      <p>there is also a general reference page the end</p>
       <br/>
       <p><a href="https://elixir-lang.org/"><img id="img-elixir" alt="elixir" src="./image/elixir_logo.png"></a></p>
     </section>
 
     <section class="slide">
       <h2><a href="https://hexdocs.pm/elixir/IO.html#puts/2"><code>IO.puts/2</code></a></h2>
-      <p>basic console out</p>
+      <p><li>basic console out</li></p>
+      <p><li>accepts Strings/binaries as input</li></p>
       <br />
       <p>Example:</p>
       <div class="code">
-        <p><code>iex(1)> %{key0: :value0, key1: :value1} |> inspect() |> IO.puts()</code></p>
-        <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← output to console</p>
+        <p><code>iex(1)> IO.puts("Cool Message!")</code></p>
+        <p><code class="tabbed">"Cool Message!"</code> ← output to console</p>
         <p><code class="tabbed">:ok</code> ← returns an atom</p> 
       </div>
     </section>
 
     <section class="slide">
       <h2><a href="https://hexdocs.pm/elixir/IO.html#inspect/2"><code>IO.inspect/2</code></a></h2>
-      <p>basic console out, but pipe friendly</p>
+      <p><li>basic console out, but pipe friendly</li></p>
+      <p><li>can take in just about anything because its like <a href="https://hexdocs.pm/elixir/Kernel.html#inspect/2"><code>Kernel.inspect/2</code></a></li></p>
       <br />
       <p>Example:</p>
       <div class="code">
@@ -140,8 +186,8 @@
 
     <section class="slide">
       <h2><a href="https://hexdocs.pm/logger/Logger.html"><code>Logger</code></a></h2>
-      <p>configurable logging system</p>
-      <p>Supports log levels</p>
+      <p><li>configurable logging system</li></p>
+      <p><li>Supports log levels</li></p>
       <br />
       <p>Example:</p>
       <div class="code">
@@ -169,13 +215,13 @@
         <p><code class="tabbed">...</code></p>
         <p><code>end</code></p>
       </div>
-      <p><a href="../examples/lib/pry_example.ex">Hands on Example</a></p>
+      <p class="hands-on-example"><a href="../examples/lib/pry_example.ex">Hands on Example</a></p>
     </section>
 
     <section class="slide">
       <h2><a href="https://hexdocs.pm/iex/IEx.html#break!/2"><code>IEx.break!/2</code></a></h2>
-      <p>enables a breakpoint in the code when running the elixir console</p>
-      <p>does not have access to aliases and imports because its run on the compiled code</p>
+      <p><li>enables a breakpoint in the code when running the elixir console</li></p>
+      <p><li>does not have access to aliases and imports because its run on the compiled code</li></p>
       <br />
       <p>Example:</p>
       <div class="code">
@@ -198,32 +244,82 @@
         <p><code class="tabbed">"a" "b"</code></p>
         <p><code class="tabbed">:ok</code></p>
       </div>
-      <p><a href="../examples/lib/break_example.ex">Hands on Example</a></p>
+      <p class="hands-on-example"><a href="../examples/lib/break_example.ex">Hands on Example</a></p>
     </section>
 
-    <section class="slide">
+    <section class="slide debugger">
       <h2>Visual Debugger</h2>
       <p>basically <code>IEx.break!</code> but with a GUI</p>
       <br />
       <p>Example:</p>
-      <p><div class="code"><code>TODO: add code and screenshots</code></p></div></p>
+      <p>
+        <div class="code">
+          <p><code>iex(1)> :debugger.start()</code></p>
+          <p><code class="tabbed">{:ok, #PID<0.145.0>}</code></p>
+          <p><code>iex(2)> :init.ni(SomeModule)</code></p>
+          <p><code class="tabbed">{:module, SomeModule}</code></p>
+          <p><code>iex(1)> :init.break(SomeModule, 3)</code></p>
+          <p><code class="tabbed">:ok</code></p>
+        </div>
+        <img src="./image/debugger-elixir.gif" />
+      </p>
     </section>
 
-    <section class="slide">
+    <section class="slide observer">
       <h2>Observer</h2>
       <p>basically the visual debugger but you can see more meta-data for the application and its processes</p>
       <br />
       <p>Example:</p>
-      <p><div class="code"><code>TODO: add code and screenshots</code></p></div></p>
+      <p>
+        <div class="code">
+          <p><code>iex(1)> :observer.start()</code></p>
+          <p><code class="tabbed">:ok</code></p>
+        </div>
+        <img src="./image/debugger-elixir.gif" />
+      </p>
     </section>
 
     <section class="slide">
+      <h2><a href="https://hexdocs.pm/iex/IEx.Helpers.html#runtime_info/0"><code>runtime_info/0</code></a></h2>
+      <p>quick look at the runtime information of the iex session/application</p>
+      <br />
+      <p>Example:</p>
+      <p>
+        <div class="code">
+          <p><code>iex(1)> runtime_info()</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">## System and architecture</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">Elixir version:     1.11.1</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">Erlang/OTP version: 23</code></p>
+          <p><code class="tabbed">...</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">## Memory </code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">Total:              38 MB</code></p>
+          <p><code class="tabbed">...</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">## Statistics / limits</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">Uptime:             25 minutes and 21 seconds</code></p>
+          <p><code class="tabbed">...</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">Showing topics:     [:system, :memory, :limits]</code></p>
+          <p><code class="tabbed">Additional topics:  [:allocators, :applications]</code></p>
+          <p><code class="tabbed"></code></p>
+          <p><code class="tabbed">To view a specific topic call runtime_info(topic)</code></p>
+        </div>
+      </p>
+    </section>
+
+    <!-- <section class="slide">
       <h2>Community Tools</h2>
       <p>because Elixir is Open Source, the community has created more tooling around debugging</p>
       <br />
       <p>Example:</p>
       <p><div class="code"><code>TODO: intro the tools or maybe omit</code></p></div></p>
-    </section>
+    </section> -->
 
     <section class="slide thank-you">
       <h1>Thank You!</h1>

@@ -407,7 +407,7 @@ blockquote:before {
   left: 0;
   font-size: 5em;
   line-height: 1;
-  color: #ccf0f0;
+  color: #f2eaff;
   z-index: 1;
 }
 
@@ -434,17 +434,17 @@ a:hover, a:focus {
   font-size: 1.75em;
   background: #f4fafe;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  background: -moz-linear-gradient(top, #f4fafe 0%, #f2eaff 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4fafe), color-stop(100%, #ccf0f0));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4fafe), color-stop(100%, #f2eaff));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  background: -webkit-linear-gradient(top, #f4fafe 0%, #f2eaff 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  background: -o-linear-gradient(top, #f4fafe 0%, #f2eaff 100%);
   /* Opera11.10+ */
-  background: -ms-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  background: -ms-linear-gradient(top, #f4fafe 0%, #f2eaff 100%);
   /* IE10+ */
-  background: linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  background: linear-gradient(top, #f4fafe 0%, #f2eaff 100%);
   /* W3C */
   background-attachment: fixed;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
