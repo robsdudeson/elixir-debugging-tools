@@ -160,7 +160,7 @@
         <p><code class="tabbed">...</code></p>
         <p><code>end</code></p>
       </div>
-      <p><a href="../code/pry_example.ex">Hands on Example</a></p>
+      <p><a href="../examples/lib/pry_example.ex">Hands on Example</a></p>
     </section>
 
     <section class="slide">
@@ -169,7 +169,27 @@
       <p>does not have access to aliases and imports because its run on the compiled code</p>
       <br />
       <p>Example:</p>
-      <p><div class="code"><code>TODO:</code></p></div></p>
+      <div class="code">
+        <p><code>iex(1)> break! BreakExample.func/2</code></p>
+        <p><code class="tabbed">1</code></p>
+        <p><code>iex(2)> BreakExample.func("a","b")</code></p>
+        <p><code></code></p>
+        <p><code class="tabbed">Break reached: BreakExample.func/2 (lib/break_example.ex:19)</code></p>
+        <p><code></code></p>
+        <p><code class="tabbed">17:   then execute continue to break out of the pry</code></p>
+        <p><code class="tabbed">18:   """</code></p>
+        <p><code class="tabbed">19:   def func(a, b) do</code></p>
+        <p><code class="tabbed">20:     IO.puts("#{inspect(a)} #{inspect(b)}")</code></p>
+        <p><code class="tabbed">21:     :ok</code></p>
+        <p><code></code></p>
+        <p><code>pry(1)> IO.puts(a)</code></p>
+        <p><code class="tabbed">a</code></p>
+        <p><code class="tabbed">:ok</code></p>
+        <p><code>pry(2)> continue</code></p>
+        <p><code class="tabbed">"a" "b"</code></p>
+        <p><code class="tabbed">:ok</code></p>
+      </div>
+      <p><a href="../examples/lib/break_example.ex">Hands on Example</a></p>
     </section>
 
     <section class="slide">
