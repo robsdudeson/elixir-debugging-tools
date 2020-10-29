@@ -32,10 +32,17 @@
     .code {
       background: black;
       border-radius: .25em;
-      color: white;
+      color: #c6c6c6;
       padding: .25em;
+      width: 40em;
+    }
+    .code code{
+      color: #c6c6c6;
     }
     .tabbed {
+      margin-left: 2em;
+    }
+    .tabbed-2 {
       margin-left: 4em;
     }
     .presenter p{
@@ -97,8 +104,20 @@
     </section>
 
     <section class="slide">
-      <h2><code>IO.inspect/2</code></h2>
+      <h2><a href="https://hexdocs.pm/elixir/IO.html#puts/2"><code>IO.puts/2</code></a></h2>
       <p>basic console out</p>
+      <br />
+      <p>Example:</p>
+      <div class="code">
+        <p><code>iex(1)> %{key0: :value0, key1: :value1} |> inspect() |> IO.puts()</code></p>
+        <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← output to console</p>
+        <p><code class="tabbed">:ok</code> ← returns an atom</p> 
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2><a href="https://hexdocs.pm/elixir/IO.html#inspect/2"><code>IO.inspect/2</code></a></h2>
+      <p>basic console out, but pipe friendly</p>
       <br />
       <p>Example:</p>
       <div class="code">
@@ -106,26 +125,46 @@
         <p><code class="tabbed">%{key0: :value0, key1: :value1}</code></p>
         <p><code>iex(2)> IO.inspect(map)</code></p>
         <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← output to console</p>
-        <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← returns the thing inspected</p>
+        <p><code class="tabbed">%{key0: :value0, key1: :value1}</code> ← returns the thing inspected (neat!)</p>
       </div>
     </section>
 
     <section class="slide">
-      <h2><code>IEx.pry/0</code></h2>
-      <p>enables a breakpoint in the code when running the elixir console</p>
-      <p>has access to the pre-compiled aliases and imports</p>
+      <h2><a href="https://hexdocs.pm/logger/Logger.html"><code>Logger</code></a></h2>
+      <p>configurable logging system</p>
+      <p>Supports log levels</p>
       <br />
       <p>Example:</p>
+      <div class="code">
+        <p><code>defmodule MyModule do</code></p>
+        <p><code class="tabbed">require Logger</code></p>
+        <p><code class="tabbed">...</code></p>
+        <p><code class="tabbed">def my_function() do</code></p>
+        <p><code class="tabbed-2">Logger.info("Cool message Bro!")</code></p>
+        <p><code class="tabbed">end</code></p>
+        <p><code>end</code></p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2><a href="https://hexdocs.pm/iex/IEx.html#pry/0"><code>IEx.pry/0</code></a></h2>
+      <p><li>enables a breakpoint in the code when running the elixir console</li></p>
+      <p><li>has access to the pre-compiled aliases and imports</li></p>
+      <p><li>can access and manipulate scoped data</li></p>
+      <p><li>use <code>continue</code> to break out</li></p>
+      <br />
+      <p>Slide Friendly Example:</p>
       <div class="code">
         <p><code>def some_fun(a, b, c) do</code></p>
         <p><code class="tabbed">require IEx; IEx.pry</code></p>
         <p><code class="tabbed">...</code></p>
         <p><code>end</code></p>
       </div>
+      <p><a href="../code/pry_example.ex">Hands on Example</a></p>
     </section>
 
     <section class="slide">
-      <h2><code>IEx.break!/2</code></h2>
+      <h2><a href="https://hexdocs.pm/iex/IEx.html#break!/2"><code>IEx.break!/2</code></a></h2>
       <p>enables a breakpoint in the code when running the elixir console</p>
       <p>does not have access to aliases and imports because its run on the compiled code</p>
       <br />
@@ -172,6 +211,8 @@
       <ul>
       <li><a href="http://imakewebthings.com/deck.js/">deck.js - http://imakewebthings.com/deck.js/</a></li>
       <li><a href="https://elixir-lang.org/getting-started/debugging.html">elixir school - https://elixir-lang.org/getting-started/debugging.html</a></li>
+      <li><a href="https://hexdocs.pm/elixir/IO.html">elixir IO hexdocs - https://hexdocs.pm/elixir/IO.html</a></li>
+      <li><a href="https://hexdocs.pm/iex/IEx.html">IEx hexdocs - https://hexdocs.pm/iex/IEx.html</a></li>
       </ul>
     </section>
 
