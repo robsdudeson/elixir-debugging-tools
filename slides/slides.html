@@ -45,7 +45,7 @@
     .tabbed-2 {
       margin-left: 4em;
     }
-    .presenter p{
+    .presenter{
       text-align: center;
     }
     .presenter a {
@@ -55,14 +55,16 @@
     .presenter i {
       margin: .5em .25em auto
     }
-    .audience img {
-      width: auto;
-    }
-    .thank-you p {
+    .audience{
       text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+    }
+    .audience p {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .thank-you {
+      text-align: center;
     }
   </style>
 
@@ -75,7 +77,7 @@
     <!-- Begin slides. Just make elements with a class of slide. -->
 
     <section class="slide">
-      <h1>Elixir and Erlang Debugging Tools</h1>
+      <h1>Elixir Debugging Tools</h1>
     </section>
     
     <section class="slide presenter">
@@ -95,12 +97,9 @@
     
     <section class="slide audience">
       <h2>Intended Audience</h2>
-      <p>This is targeted for anyone who is already familiar with elixir and erlang</p>
+      <p>This is targeted for anyone who is already familiar with elixir</p>
       <br/>
-      <p>
-        <a href="https://elixir-lang.org/"><img alt="elixir" src="./image/elixir_logo.png"></a>
-        <a href="https://erlang.org/"><img alt="erlang" src="./image/erlang_logo.png"></a>
-      </p>
+      <p><a href="https://elixir-lang.org/"><img id="img-elixir" alt="elixir" src="./image/elixir_logo.png"></a></p>
     </section>
 
     <section class="slide">
